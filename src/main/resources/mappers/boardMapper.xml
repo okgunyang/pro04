@@ -21,4 +21,7 @@
 	<delete id="boardDelete">
 		delete from board where seq=#{seq}
 	</delete>
+	<update id="boardEdit">
+		update board set title=#{title}, content=#{content} where seq=#{seq}
+	</update>
 </mapper>

@@ -33,6 +33,10 @@ public class BoardServiceImpl implements BoardService {
 	public void boardDelete(int seq) throws Exception {
 		boardDAO.boardDelete(seq);
 	}
-	
-	
+
+	@Override
+	public void boardEdit(BoardDTO dto) throws Exception {
+		boardDAO.boardEdit(dto);
+	}
+
 }

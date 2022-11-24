@@ -59,4 +59,25 @@ public class BoardController {
 		return "redirect:list.do";
 	}
 	
+	@GetMapping("edit.do")
+	public String editForm(HttpServletRequest request, Model model) throws Exception {
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		BoardDTO dto = boardService.boardDetail(seq);
+		model.addAttribute("dto", dto);
+		return "board/boardEdit";
+	}
+	
+	@PostMapping("edit.do")
+	public String boardEdit(HttpServletRequest request, Model model) throws Exception {
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		
+		BoardDTO dto = new BoardDTO();
+		dto.setSeq(seq);
+		dto.setTitle(request.getParameter("title"));
+		dto.setContent(request.getParameter("content"));
+		boardService.boardEdit(dto);
+		
+		return "redirect:list.do";
+	}
+	
 }

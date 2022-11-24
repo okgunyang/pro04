@@ -9,4 +9,5 @@ public interface BoardDAO {
 	public BoardDTO boardDetail(int seq) throws Exception;
 	public void boardInsert(BoardDTO dto) throws Exception;
 	public void boardDelete(int seq) throws Exception;
+	public void boardEdit(BoardDTO dto) throws Exception;
 }

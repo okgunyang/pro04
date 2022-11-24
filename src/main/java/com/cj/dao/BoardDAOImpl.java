@@ -34,4 +34,8 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.delete("board.boardDelete", seq);		
 	}
 
+	@Override
+	public void boardEdit(BoardDTO dto) throws Exception {
+		sqlSession.update("board.boardEdit", dto);
+	}
 }
