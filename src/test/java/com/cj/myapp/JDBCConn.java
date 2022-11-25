@@ -21,7 +21,7 @@ public class JDBCConn {
 	@Test
 	public void testConnection() {
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","1234");
+			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:xe","system","1234");
 			if(conn!=null) {
 				logger.info("오라클 연결 성공");
 			} else {

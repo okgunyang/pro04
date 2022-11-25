@@ -19,6 +19,7 @@
 				<li><a href="${path1 }/board/list.do">공지사항</a></li>
 				<li><a href="#">자료실</a></li>
 				<li><a href="#">질문 및 답변</a></li>
+				<li><a href="${path1 }/free/list.do">자유게시판</a></li>
 			</ul>
     	</li>
        <li><a href="#">Human</a></li>
@@ -28,12 +29,12 @@
      <div class="top-bar-right">
        <ul class="menu">
         <c:if test="${empty sid }">
-          <li><a href="#">로그인</a></li>
-          <li><a href="#">회원가입</a></li>
+          <li><a href="${path1 }/member/loginForm.do">로그인</a></li>
+          <li><a href="${path1 }/member/agree.do">회원가입</a></li>
         </c:if>
         <c:if test="${not empty sid }">  
-          <li><a href="#">로그아웃</a></li>
-          <li><a href="#">회원정보</a></li>
+          <li><a href="${path1 }/member/logout.do">로그아웃</a></li>
+          <li><a href="${path1 }/member/read.do">회원정보</a></li>
         </c:if>  
         <c:if test='${sid eq "admin"}'>
           <li><a href="#">관리자 페이지</a></li>

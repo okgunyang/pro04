@@ -30,9 +30,19 @@ delete from board where seq=?;
 
 commit;
 
-create table mem(userid varchar2(20) primary key,
-userpw varchar2(300) not null,
-username varchar2(50),
+-- 파일 첨부가 가능한 자유 게시판
+create table free(bno int primary key,  -- 글번호
+title varchar2(100) not null,   -- 글제목
+content varchar2(1500) not null,    -- 글내용
+regdate date,   -- 작성일
+visited int,    -- 조회수
+id varchar2(20),    -- 작성자
+rec int -- 추천수
+);
+
+create table member(id varchar2(20) primary key,
+pw varchar2(300) not null,
+name varchar2(50),
 email varchar2(100) not null,
 tel varchar2(20) not null,
 addr1 varchar2(200),
@@ -40,8 +50,8 @@ addr2 varchar2(100),
 postcode varchar2(10),
 regdate date default sysdate,
 birth date,
-userpoint number default 100,
-visited number default 0
+pt int default 100,
+visited int default 0
 );
 
 desc mem; 
