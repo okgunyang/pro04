@@ -15,7 +15,7 @@ public class MemberValidator implements Validator {
 		ValidationUtils.rejectIfEmpty(error, "id", "member.id.empty","아이디를 입력해주세요.");
 		ValidationUtils.rejectIfEmpty(error, "pw", "member.pw.empty","비밀번호를 입력해주세요");
 
-		Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{6,12}$", Pattern.CASE_INSENSITIVE);
+		Pattern pattern = Pattern.compile("^[a-zA-Z0-9]{8,12}$", Pattern.CASE_INSENSITIVE);
         if (!(pattern.matcher(member.getPw()).matches())) {
         	error.rejectValue("pw", "member.pw.invalid");
         }

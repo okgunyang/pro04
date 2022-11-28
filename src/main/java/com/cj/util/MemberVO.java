@@ -6,16 +6,19 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import lombok.Data;
+
 public class MemberVO {
 	
 	@Id		//primary key인 필드에 지정
-	@Size(min=8, max =12, message="아이디는 8~12자로 작성해야함")
+	@Size(min=5, max =12, message="아이디는 5~12자로 작성해야함")
 	String id;
 	
 	@Column
 	@NotNull
-	@Size(min=6, max =12, message="비밀번호는 6~12자로 작성해야함")
-	@Pattern(regexp="(^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&])[A-Za-z[0-9]$@$!%*#?&]{8,10}$)")
+	@Size(min=6, max =12, message="비밀번호는 8~12자로 작성해야함")
+	@Pattern(regexp="(^[A-Za-z0-9]{8,12}$)")
+	//(^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&])[A-Za-z[0-9]$@$!%*#?&]{8,10}$)
 	String pw; 
 	
 	public String getId() {
